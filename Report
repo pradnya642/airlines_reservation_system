@@ -1,0 +1,152 @@
+Link : https://docs.google.com/document/d/1w_C_x5Ce-aPb3RIIZLQMuLtcsduWifV98DoQFX3YbaY/edit?pli=1&addon_store
+
+Project Report: Airline Reservation System in C++
+
+This report covers the development of a C++ program designed to manage airline reservations. The system integrates with an SQL database to handle flight data, including booking seats and displaying available flights. Users can enter a flight number to make a reservation, and if a seat is unavailable, they will receive a "sorry" message. The Airline Reservation System allows users to reserve seats on flights. The system involves checking flight details, handling errors, updating seat counts, and displaying available flights and seats. 
+
+Project Overview
+
+Objective:  Develop a C++ program to manage flight reservations using an SQL database. The system will display flights, allow users to make reservations, and handle seat availability.
+
+Key Components:
+1. C++ Code Structure:
+   - Headers and Libraries:
+     - `iostream` for input/output operations.
+     - `sql.h` for SQL database connectivity.
+     - `error.h` for error handling.
+     - `windows.h` for additional functionalities.
+   - Class Definition:
+     - A class `Flight` to handle flight details.
+   - Database Connection:
+     - Establish a connection with the SQL database and handle errors.
+   - Data Management:
+     - Insert flight data into the database.
+     - Display available flights and manage seat reservations.
+
+Detailed Description
+
+1. Headers and Libraries:
+   - The `sql.h` header connects C++ with the SQL database.
+   - The `error.h` header is included to display any database errors.
+   - Additional headers like `windows.h` are used for system-specific functionalities.
+
+2. Global Variables:
+   - Host: Set to `localhost`.
+   - User: Set to `root`.
+   - Password and Database: Configured for access.
+   - Flight Database:  Named `MyDB` for storing flight details.
+
+3. Class Definition - `Flight`:
+   - Private Members:
+     - `F` (Flight Number)
+     - `DP` (Departure)
+     - `DS` (Destination)
+     - `waitingType` (Seat Availability)
+   - Public Members:
+     - Constructor to initialize flight details.
+     - Getter functions for flight number, departure, destination, and seat availability.
+
+4. Database Connection:
+   - Establish a connection using provided credentials.
+   - Handle connection errors and display relevant messages.
+
+5. Flight Data Management:
+   - Create a table named `Airline` with columns for Flight Number, Departure, Destination, and Seat.
+   - Insert flight data into the table and ensure successful insertion.
+
+6. User Interface:
+   - Provide options to the user for viewing flights, making reservations, or exiting the program.
+   - Display appropriate messages based on user actions, such as reservation success or failure.
+
+SQL Commands and Data Management
+
+1. Creating a Database Table:
+   - SQL command to create a table `Airline` with columns: `FlightNumber`, `Departure`, `Destination`, and `Seat`.
+
+2. Inserting Data:
+   - Insert flight data into the `Airline` table with values for flight number, departure, destination, and seat availability.
+
+3. Handling Queries:
+   - Execute queries to insert data into the table.
+   - Handle and display any errors that occur during insertion.
+
+Error Handling
+
+- Connection Errors: Display error messages if the database connection fails.
+- Data Insertion Errors:  Report errors during data insertion and provide feedback to the user.
+
+ Implementation Details
+
+3.1 Flight Number Handling
+
+- Process: Capture the flight number entered by the user and validate it.
+   - Implementation:
+         - Check if the flight number exists and is valid.
+         - Append a plus sign and a semicolon to format the entry correctly.
+
+3.2 Error Checking and Handling
+
+- Process:  Check for errors in flight data and handle them appropriately.
+  - Implementation:
+         - Use 'if' conditions to determine if there are any errors.
+         - If errors are found, handle them using appropriate error messages and     corrective actions.
+
+3.3 Database Queries and Updates
+
+- Process: Retrieve and update flight information from the database.
+- Implementation:
+  - Query the database for flight details and seat availability using SQL.
+  - Create variables to store results and update the database with the new seat counts.
+  - Handle SQL queries using variables and ensure results are processed correctly.
+
+3.4 Seat Reservation Process
+
+- Process: Manage seat reservations based on user input.
+- Implementation:
+  - Check if seats are available.
+  - Update the seat count in the database when a reservation is made.
+  - Provide feedback to users on the reservation status.
+
+3.5 Display of Flight Information
+
+- Process: Display available flights and seats to the user.
+- Implementation:
+  - Create a function to display flight information.
+  - Use a loop to iterate through available flights and seats.
+  - Handle the display of flight details and seat availability.
+
+ Code Walkthrough
+
+- Flight Number Handling:  The system checks the validity of the flight number and formats it correctly with appropriate symbols.
+- Error Handling: The code uses 'if' statements to check for errors and ensure proper handling.
+- Database Operations:  SQL queries are used to retrieve and update flight information. The system handles connection arguments and updates the database as needed.
+- Seat Reservation: The system decrements the seat count upon reservation and updates the database.
+- Display Function: A function is used to display available flights and their seat counts. The function handles the formatting and output of flight information.
+
+
+Testing and Validation
+
+- Tests Conducted:
+  - Valid and invalid flight number inputs.
+  - Successful and unsuccessful seat reservations.
+  - Display of flight information and seat availability.
+
+- Results:
+  - The system successfully handles valid inputs and updates the database.
+  - Errors are correctly identified and managed.
+  - The display function provides accurate flight and seat information.
+
+ Conclusion
+
+The Airline Reservation System effectively manages flight reservations and seat availability. It uses SQL for database management and C++ for application logic. The system handles various aspects of flight management, including error handling, database updates, and user feedback. The project demonstrates the integration of SQL with C++ to create a functional and user-friendly reservation system.
+
+
+Future Work
+
+- Enhancements:
+  - Integrate additional features such as user login and payment processing.
+  - Improve the user interface for better user experience.
+  - Implement more advanced error handling and logging mechanisms.
+
+- Additional Testing:
+  - Conduct extensive testing with different scenarios to ensure system robustness.
